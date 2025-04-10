@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fruit.css">
+</head>
+
+
+
+<body>
+    <main>
+        <div id="sidebar">
+            <input oninput="searchProducts()" id="searchInput" type="text" placeholder="Ürün ara...">
+            <select id="categoryFilter" onchange="filterProducts()">
+                <option value="All" selected>Hepsi</option>
+                <option value="true">Meyveler</option>
+                <option value="false">Sebzeler</option>
+            </select>
+
+            <div id="productCards">
+
+            </div>
+        </div>
+
+        <div id="basketSection">
+            <h2>Sepet: <span id="total-quantity"></span></h2>
+            <h2>Total: <span id="total-price"></span></h2>
+            <div id="basketItems"></div>
+        </div>
+    </main>
+</body>
+
+
+<script src="./fruit.js"></script>
+</body>
+
+</html>
