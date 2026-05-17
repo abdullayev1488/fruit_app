@@ -4,37 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FreshMarket - Təbii Meyvə və Sebzələr</title>
+    <!-- Google Font Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./fruit.css">
 </head>
 
-
-
 <body>
-    <main>
-        <div id="sidebar">
-            <input oninput="searchProducts()" id="searchInput" type="text" placeholder="Ürün ara...">
-            <select id="categoryFilter" onchange="filterProducts()">
-                <option value="All" selected>Hepsi</option>
-                <option value="true">Meyveler</option>
-                <option value="false">Sebzeler</option>
-            </select>
-
-            <div id="productCards">
-
+    <!-- Premium Header Banner -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="brand">
+                <i class="fa-solid fa-leaf brand-icon"></i>
+                <h1>FreshMarket</h1>
+            </div>
+            
+            <div class="header-controls">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input oninput="searchProducts()" id="searchInput" type="text" placeholder="Məhsul ara...">
+                </div>
+                
+                <div class="filter-box">
+                    <i class="fa-solid fa-filter filter-icon"></i>
+                    <select id="categoryFilter" onchange="filterProducts()">
+                        <option value="All" selected>Bütün Məhsullar</option>
+                        <option value="true">Meyvələr</option>
+                        <option value="false">Tərəvəzlər</option>
+                    </select>
+                </div>
             </div>
         </div>
+    </header>
 
-        <div id="basketSection">
-            <h2>Sepet: <span id="total-quantity"></span></h2>
-            <h2>Total: <span id="total-price"></span></h2>
-            <div id="basketItems"></div>
-        </div>
+    <main class="main-content-area">
+        <!-- Catalog Grid Section -->
+        <section id="catalogSection">
+            <div class="section-title">
+                <h2>Təzə və Təbii</h2>
+                <p>Gündəlik təzə, 100% təbii meyvə və tərəvəzlərimiz</p>
+            </div>
+            <div id="productCards"></div>
+        </section>
+
+        <!-- Sticky Basket Section -->
+        <aside id="basketSection">
+            <div class="basket-header">
+                <div class="basket-title">
+                    <i class="fa-solid fa-basket-shopping basket-icon"></i>
+                    <h2>Səbətim</h2>
+                </div>
+                <span id="total-quantity" class="badge">0</span>
+            </div>
+            
+            <div id="basketItems" class="basket-items-list">
+                <!-- Basket items will load dynamically here -->
+            </div>
+            
+            <div class="basket-summary">
+                <div class="summary-row">
+                    <span>Yekun Məbləğ:</span>
+                    <span id="total-price" class="total-price-val">0.00 AZN</span>
+                </div>
+                <button class="btn-checkout">
+                    <i class="fa-solid fa-circle-check"></i> Sifarişi Tamamla
+                </button>
+            </div>
+        </aside>
     </main>
-</body>
 
-
-<script src="./fruit.js"></script>
+    <script src="./fruit.js"></script>
 </body>
 
 </html>
